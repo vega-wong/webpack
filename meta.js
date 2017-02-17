@@ -54,6 +54,11 @@ module.exports = {
       "message": "Pick an ESLint preset",
       "choices": [
         {
+          "name": "Yidejia",
+          "value": "yidejia",
+          "short": "Yidejia"
+        },
+        {
           "name": "Standard (https://github.com/feross/standard)",
           "value": "standard",
           "short": "Standard"
@@ -70,14 +75,14 @@ module.exports = {
         }
       ]
     },
-    "unit": {
-      "type": "confirm",
-      "message": "Setup unit tests with Karma + Mocha?"
-    },
-    "e2e": {
-      "type": "confirm",
-      "message": "Setup e2e tests with Nightwatch?"
-    }
+    // "unit": {
+    //   "type": "confirm",
+    //   "message": "Setup unit tests with Karma + Mocha?"
+    // },
+    // "e2e": {
+    //   "type": "confirm",
+    //   "message": "Setup e2e tests with Nightwatch?"
+    // }
   },
   "filters": {
     ".eslintrc.js": "lint",
