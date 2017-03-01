@@ -11,7 +11,7 @@
 
 <script>
 {{#unless router}}
-import Hello from './components/Hello'{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
+import Hello from './components/Hello'{{#if_eq_or lintConfig "airbnb" lintConfig "yidejia"}};{{/if_eq_or}}
 
 {{/unless}}
 export default {
@@ -19,7 +19,7 @@ export default {
   components: {
     Hello{{#if_eq lintConfig "airbnb"}},{{/if_eq}}
   }{{#if_eq lintConfig "airbnb"}},{{/if_eq}}{{/router}}
-}{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
+}{{#if_eq_or lintConfig "airbnb" lintConfig "yidejia"}};{{/if_eq_or}}
 </script>
 
 <style>

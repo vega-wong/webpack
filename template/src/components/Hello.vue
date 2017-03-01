@@ -23,12 +23,12 @@
 <script>
 export default {
   name: 'hello',
-  data{{#unless_eq lintConfig "airbnb"}} {{/unless_eq}}() {
+  data{{#unless_eq_and lintConfig "airbnb" lintConfig "yidejia"}} {{/unless_eq_and}}() {
     return {
       msg: 'Welcome to Your Vue.js App'{{#if_eq lintConfig "airbnb"}},{{/if_eq}}
-    }{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
+    }{{#if_eq_or lintConfig "airbnb" lintConfig "yidejia"}};{{/if_eq_or}}
   }{{#if_eq lintConfig "airbnb"}},{{/if_eq}}
-}{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
+}{{#if_eq_or lintConfig "airbnb" lintConfig "yidejia"}};{{/if_eq_or}}
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

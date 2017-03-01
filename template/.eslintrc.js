@@ -16,11 +16,14 @@ module.exports = {
   {{#if_eq lintConfig "airbnb"}}
   extends: 'airbnb-base',
   {{/if_eq}}
+  {{#if_eq lintConfig "yidejia"}}
+  extends: 'yidejia',
+  {{/if_eq}}
   // required to lint *.vue files
   plugins: [
     'html'
   ],
-  {{#if_eq lintConfig "airbnb"}}
+  {{#if_eq_or lintConfig "airbnb" lintConfig "yidejia"}}
   // check if imports actually resolve
   'settings': {
     'import/resolver': {
@@ -29,7 +32,7 @@ module.exports = {
       }
     }
   },
-  {{/if_eq}}
+  {{/if_eq_or}}
   // add your custom rules here
   'rules': {
     {{#if_eq lintConfig "standard"}}
@@ -38,7 +41,7 @@ module.exports = {
     // allow async-await
     'generator-star-spacing': 0,
     {{/if_eq}}
-    {{#if_eq lintConfig "airbnb"}}
+    {{#if_eq_or lintConfig "airbnb" lintConfig "yidejia"}}
     // don't require .vue extension when importing
     'import/extensions': ['error', 'always', {
       'js': 'never',
@@ -48,7 +51,7 @@ module.exports = {
     'import/no-extraneous-dependencies': ['error', {
       'optionalDependencies': ['test/unit/index.js']
     }],
-    {{/if_eq}}
+    {{/if_eq_or}}
     // allow debugger during development
     'no-debugger': process.env.NODE_ENV === 'production' ? 2 : 0
   }

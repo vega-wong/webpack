@@ -45,6 +45,11 @@
     "eslint-import-resolver-webpack": "^0.8.1",
     "eslint-plugin-import": "^2.2.0",
     {{/if_eq}}
+    {{#if_eq lintConfig "yidejia"}}
+    "eslint-config-yidejia": "^1.1.4",
+    "eslint-import-resolver-webpack": "^0.8.1",
+    "eslint-plugin-import": "^2.2.0",
+    {{/if_eq}}
     {{/lint}}
     "eventsource-polyfill": "^0.9.6",
     "express": "^4.14.1",
